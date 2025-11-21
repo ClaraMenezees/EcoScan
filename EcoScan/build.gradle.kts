@@ -1,30 +1,23 @@
-// build.gradle.kts (Módulo: app)
-// Este arquivo fica na raiz do seu projeto (não dentro da pasta 'app')
-
 plugins {
 
     id("com.android.application") version "8.1.0" apply false // Use a versão estável mais recente
     id("org.jetbrains.kotlin.android") version "1.9.20" apply false // Versão do Kotlin
 }
-// ...
 
 android {
-    // ... (Seu namespace e configurações de SDK)
     compileSdk = 34
 
     defaultConfig {
-        // ...
+       
     }
 
-    // Configurações do Compose
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4" // Ajuste conforme sua versão do Kotlin
+        kotlinCompilerExtensionVersion = "1.5.4" 
     }
 
-    // ... (Compile Options e Kotlin Options)
 }
 
 dependencies {
@@ -45,11 +38,10 @@ dependencies {
     // ViewModel e LiveData para Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 
-    // Retrofit (Rede) + Gson (Conversor JSON)
+    // Retrofit + Gson 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // Coil para carregar Imagens no Compose
     implementation("io.coil-kt:coil-compose:2.4.0")
 
     // Navigation Compose
