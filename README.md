@@ -30,6 +30,17 @@ O app consome a API pública **Open Food Facts** para analisar:
 
 ---
 
+## 👩‍💻 Equipe de Desenvolvimento
+
+| Integrante         | Função | Responsabilidades |
+|-------------------|---------|-------------------|
+| Silvio Marques    | Desenvolvedor(a) Android | Implementação da UI, Navigation, ViewModels |
+| Edvaldo Luiz      | Desenvolvedor(a) Backend/API | Integração e endpoints REST |
+| nyckollas Paulino | Designer UX/UI | Protótipos, acessibilidade e responsividade |
+| Clara Menezes     | Tester / Documentação | Testes, README, organização do repositório |
+
+---
+
 ## 🛠 Tecnologias Utilizadas
 
 O projeto segue as melhores práticas de desenvolvimento Android moderno (Modern Android Development - MAD):
