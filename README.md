@@ -62,13 +62,63 @@ O projeto segue as melhores práticas de desenvolvimento Android moderno (Modern
 A organização das pastas segue a separação de responsabilidades (Clean Architecture simplificada):
 
 ```text
-com.seugrupo.ecoscan
-├── data                # Camada de Dados
-│   ├── model           # Data Classes (JSON response)
-│   ├── remote          # Interfaces Retrofit e Client HTTP
-│   └── repository      # Fonte única de verdade (Single Source of Truth)
-├── ui                  # Camada de Interface (Views e ViewModels)
-│   ├── scan            # Fragmento de Scanner
-│   ├── details         # Fragmento de Detalhes do Produto
-│   └── history         # Fragmento de Histórico
-└── utils               # Extensões e constantes
+com.ifpe.ecoscan
+│
+├── api                          # Camada de rede (Retrofit)
+│   ├── OpenFoodFactsApi.kt
+│   └── RetrofitInstance.kt
+│
+├── data                         # Camada de dados
+│   ├── model                    # Modelos (DTO + domínio)
+│   │   ├── Product.kt
+│   │   ├── Nutriments.kt
+│   │   ├── ProductResponse.kt
+│   │   └── api                  # Modelos vindos da API
+│   │       ├── ProductApi.kt
+│   │       └── NutrimentsApi.kt
+│   │
+│   └── repository               # Fonte única de verdade
+│       └── ProductRepository.kt
+│
+├── ui                           # Camada de Interface (Compose)
+│   ├── navigation               # NavHost e rotas
+│   │   └── AppNavGraph.kt
+│   │
+│   ├── components               # Componentes reutilizáveis
+│   │   ├── EcoTopBar.kt
+│   │   ├── SummaryCard.kt
+│   │   ├── HistoryItem.kt
+│   │   └── SimpleBarChart.kt
+│   │
+│   ├── screens                  # Telas do app
+│   │   ├── home
+│   │   │   └── HomeScreen.kt
+│   │   ├── scanner
+│   │   │   └── ScannerScreen.kt
+│   │   ├── details
+│   │   │   └── ProductDetailsScreen.kt
+│   │   ├── history
+│   │   │   └── HistoryScreen.kt
+│   │   ├── profile
+│   │   │   └── ProfileScreen.kt
+│   │   └── login
+│   │       └── LoginScreen.kt
+│   │
+│   └── theme                    # Tema, cores, tipografia
+│       ├── Color.kt
+│       ├── Theme.kt
+│       └── Typography.kt
+│
+├── viewmodel                    # ViewModels (MVVM)
+│   ├── HomeViewModel.kt
+│   ├── ScanViewModel.kt
+│   ├── HistoryViewModel.kt
+│   ├── ProfileViewModel.kt
+│   └── FavoritesViewModel.kt
+│
+├── utils                        # Utilitários
+│   ├── NetworkUtils.kt
+│   ├── Constants.kt
+│   └── Extensions.kt
+│
+└── MainActivity.kt
